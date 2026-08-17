@@ -140,20 +140,20 @@
 <section class="px-8 md:px-16 max-w-[2000px] mx-auto mb-16 sticky top-24 z-40 bg-surface/90 backdrop-blur-md py-4">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
 <!-- Search Input -->
-<div class="relative w-full md:w-96 group">
+<form action="https://www.google.com/search" method="get" target="_blank" rel="noopener noreferrer" class="relative w-full md:w-96 group">
 <span class="material-symbols-outlined absolute left-0 bottom-2 text-outline group-focus-within:text-secondary transition-colors duration-400" data-icon="search">search</span>
-<input class="w-full bg-transparent border-0 border-b border-outline pb-2 pl-8 focus:ring-0 focus:border-secondary text-primary font-body placeholder:text-outline transition-all duration-400 outline-none" placeholder="Search artists, titles, mediums..." type="text"/>
-</div>
+<input class="w-full bg-transparent border-0 border-b border-outline pb-2 pl-8 focus:ring-0 focus:border-secondary text-primary font-body placeholder:text-outline transition-all duration-400 outline-none" placeholder="Search artists, titles, mediums..." type="text" name="q" aria-label="Buscar obras o artistas"/>
+</form>
 <!-- Filters -->
 <div class="flex flex-wrap items-center gap-4">
 <span class="font-headline text-label-md text-on-surface-variant uppercase tracking-widest mr-2">Category</span>
-<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Oil</button>
-<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Sculpture</button>
-<button class="bg-primary text-surface text-label-sm uppercase px-4 py-2">Digital</button>
+<a href="https://www.google.com/search?q=contemporary+oil+painting" target="_blank" rel="noopener noreferrer" class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400 inline-block">Oil</a>
+<a href="https://www.google.com/search?q=contemporary+sculpture" target="_blank" rel="noopener noreferrer" class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400 inline-block">Sculpture</a>
+<a href="https://www.google.com/search?q=contemporary+digital+art" target="_blank" rel="noopener noreferrer" class="bg-primary text-surface text-label-sm uppercase px-4 py-2 inline-block">Digital</a>
 <div class="w-px h-6 bg-surface-variant mx-2"></div>
 <span class="font-headline text-label-md text-on-surface-variant uppercase tracking-widest mr-2">Style</span>
-<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Minimalist</button>
-<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Abstraction</button>
+<a href="https://www.google.com/search?q=minimalist+art+gallery" target="_blank" rel="noopener noreferrer" class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400 inline-block">Minimalist</a>
+<a href="https://www.google.com/search?q=abstract+contemporary+art" target="_blank" rel="noopener noreferrer" class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400 inline-block">Abstraction</a>
 </div>
 </div>
 </section>
@@ -161,7 +161,7 @@
 <section class="px-8 md:px-16 max-w-[2000px] mx-auto">
 <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8">
 <!-- Card 1 -->
-<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<a href="https://www.artsy.net/" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low block">
 <div class="w-full h-auto min-h-[400px]">
 <img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A striking minimalist digital art piece featuring intersecting translucent geometric planes in muted sage and charcoal tones. The composition is highly asymmetrical, resting against a pure, bright off-white digital canvas. The lighting implies a soft, diffused gallery spotlight overhead, highlighting subtle gradients across the sharp-edged forms. The aesthetic is extremely high-end, clean, and architectural, emphasizing tonal depth over vibrant color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAkwNIxhCz18H4D7H5SUdzBgalDh0mQ1D_geAqNi0hDG2zt73fKiUAWbLKmgk3PoTNvbxTEymCVeWEbZruTpDskzQesS9XCmGO1EW6aNAY5044S0ihmCV5iwfmRRm-Qw9tJebho6_c9288xua58i3AthsDaua7tMooz8rGBvkfpFykEr6aqE77v3LXv_7-KxBi29oXUFdhK80E7lvOmwiwdUh_QVNPsHfnXfCRhIEJpMkC9uy9KSw2uw"/>
 </div>
@@ -173,9 +173,9 @@
 <span class="font-body text-sm opacity-70">2023</span>
 </div>
 </div>
-</article>
+</a>
 <!-- Card 2 -->
-<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<a href="https://www.saatchiart.com/" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low block">
 <div class="w-full h-auto min-h-[500px]">
 <img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="An imposing, rough-hewn contemporary sculpture captured in a stark, high-key gallery setting. The piece is monolithic, resembling fractured obsidian or dark terracotta, contrasting sharply against the pristine white walls and soft natural daylight. The composition emphasizes the aggressive, sharp textures of the material against the smooth, empty space around it. The editorial photography style uses dramatic shadows to emphasize volume and weight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Rkgr96c4FtKd1dHFDJyMi1T0YLLBcunKTDID_Hyv62rGOClTMIvgAnJbVJgD8GHfDY5ndBM4VcgIMI6Y6gfIzuxn8_hb08OLQVvmYdpmWHCvCAFCd8uR0kk1oJMTZJr2R4zq4Czlo8eBzmembqJdVg-hRjfHzkXnWnxIWgwcmmTPTTBe-MbHtsgABoN-6bVfDLc64WJEE2vpOVmJgQJsdjk6OmHcPog4XYU-nCSVql7ShwqnBVE5vQ"/>
 </div>
@@ -187,9 +187,9 @@
 <span class="font-body text-sm opacity-70">2024</span>
 </div>
 </div>
-</article>
+</a>
 <!-- Card 3 -->
-<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<a href="https://www.artnews.com/art-in-america/" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low block">
 <div class="w-full h-auto min-h-[350px]">
 <img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A large-scale abstract oil painting consisting of bold, sweeping strokes of deep ink black and terracotta red over a textured off-white canvas. The paint application is thick and expressive, yet the overall composition remains remarkably balanced and minimalist. Photographed straight-on in a brightly lit environment, showcasing the impasto technique and the raw canvas edges. The vibe is sophisticated, intense, and profoundly modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgDQUs9NEzpCdqaM21-jpsr9Eg9wH7-GJ1hQL15hNZrlnO28vX4kxxBB8LyEEVnDIeyJIZSGuPXFn07OF4HD0DkJbGVMw20xaWa2Nrq80hP6IvT-u0eYnwvLeqzBFAALBDJFJ4u-3lYYrWa7utCuqZwmEXC0skScqolqMAUjbjxZbat7MW8mATPNu6L_uCuvxujytPwPN2_dYhSrjK4lZ4y-bMwh6EjsfNuHLJjG2HR-VC-BJKAKFwYw"/>
 </div>
@@ -201,9 +201,9 @@
 <span class="font-body text-sm opacity-70">2022</span>
 </div>
 </div>
-</article>
+</a>
 <!-- Card 4 -->
-<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<a href="https://www.google.com/search?q=contemporary+digital+art+collection" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low block">
 <div class="w-full h-auto min-h-[600px]">
 <img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A serene digital artwork depicting an ethereal, almost invisible wireframe structure suspended in a vast, foggy void. The color palette is strictly limited to subtle gradients of soft white and pale gray, creating an illusion of infinite depth. The extreme minimalism evokes a sense of calm and technological spirituality. The lighting is completely uniform, eliminating all harsh shadows to maintain a dreamlike, high-end gallery presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD2esPDx_Ik74tG5UkxlrI9IYbA_9Pa0GWgEl1_B2I_aYwXxRxde0WrAKtA5l4ayckeY291gQID8daJTAyaSXJ-FX2cMnjqPZjNxJwOD0rTaillScboRVAXrLsqZ_G4hedLYwNcJQ9of60tluV7uf6EkEhUzewcZsFWvtnIWpkz9-OnWn2hghp8fX09buIEvhqcgV2wv4yjxBR6mkfH65DsQT1_dxNuRo8mPS8_IhCVfVj4kddZVVLew"/>
 </div>
@@ -215,9 +215,9 @@
 <span class="font-body text-sm opacity-70">2024</span>
 </div>
 </div>
-</article>
+</a>
 <!-- Card 5 -->
-<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<a href="https://www.saatchiart.com/search?query=abstract%20art" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low block">
 <div class="w-full h-auto min-h-[300px]">
 <img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="An intimate detail shot of an oil painting focusing solely on the interaction between a stark black shape and a textured, unpainted linen surface. The composition relies heavily on negative space and severe asymmetry. The lighting highlights the subtle grain of the canvas and the matte finish of the black pigment. It feels like a fragmented piece of a larger, highly intellectual abstract expressionist work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb6yNbbNCBbIhqrXwHPN32pI_0Uig-4MbddM6dWXssCGVc5AS33lojbAXDQl2WJ0Z7-C97mbAh-8uIuOS14PPLcBFCY3XYcea6mGZvrJJntraBN_a4c3cUY5-hgvvdfWkVXOsP6GSngamajf08BGLr5K4MEXQIBLQkwqF1sJbCVhVy_zlFUwHXGCxgsCvVfJ8tNvYjwDn0QTIAKQNMIDIZX-FvsRGKAN0OU4GCy7JO0489e4_0swZYlw"/>
 </div>
@@ -229,7 +229,7 @@
 <span class="font-body text-sm opacity-70">2021</span>
 </div>
 </div>
-</article>
+</a>
 </div>
 </section>
 </main>
