@@ -181,9 +181,9 @@ Volver
 </div>
 <!-- Contact CTA -->
 <div class="flex items-center gap-6">
-<button class="bg-primary text-on-primary px-8 py-5 font-body uppercase text-sm tracking-widest hover:bg-primary-container transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<a id="inquireWorksBtn" href="https://wa.me/34600000000?text=Hola%20Artel%C3%ADa%2C%20me%20gustar%C3%ADa%20consultar%20por%20las%20obras%20de%20Elias%20Vanguard." target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-8 py-5 font-body uppercase text-sm tracking-widest hover:bg-primary-container transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] inline-flex items-center justify-center">
                         Inquire About Works
-                    </button>
+</a>
 <a href="../assets/manifesto-artelia.pdf" target="_blank" rel="noopener noreferrer" class="text-primary font-body uppercase text-sm tracking-widest hover:text-secondary transition-colors duration-400 flex items-center gap-2 group pb-1 border-b border-primary hover:border-secondary">
                         Read Full Manifesto
                         <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
@@ -277,14 +277,41 @@ Volver
 </div>
 </footer>
 </main>
+<div id="contact-toast" aria-live="polite" style="position:fixed; right:1.25rem; bottom:1.25rem; background:#171717; color:#f5f5f5; padding:0.9rem 1.1rem; border-radius:0.75rem; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; box-shadow:0 20px 35px rgba(0,0,0,0.18); opacity:0; transform:translateY(12px); pointer-events:none; transition:all 0.25s ease; z-index:9999;">Se abrirá WhatsApp para contactarte</div>
 <script>
+        const inquiryBtn = document.getElementById('inquireWorksBtn');
+        const contactToast = document.getElementById('contact-toast');
+
+        function showContactToast(message) {
+            if (!contactToast) return;
+            contactToast.textContent = message;
+            contactToast.style.opacity = '1';
+            contactToast.style.transform = 'translateY(0)';
+            clearTimeout(showContactToast.timeoutId);
+            showContactToast.timeoutId = setTimeout(() => {
+                contactToast.style.opacity = '0';
+                contactToast.style.transform = 'translateY(12px)';
+            }, 2600);
+        }
+
+        if (inquiryBtn) {
+            inquiryBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const whatsappUrl = 'https://wa.me/34600000000?text=' + encodeURIComponent('Hola Artelía, me gustaría consultar por las obras de Elias Vanguard.');
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                showContactToast('Se abrirá WhatsApp para contactarte');
+            });
+        }
+
         // Simple script to handle scroll events for mobile nav styling if needed
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('mobile-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-md');
-            } else {
-                nav.classList.remove('shadow-md');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
             }
         });
     </script>
