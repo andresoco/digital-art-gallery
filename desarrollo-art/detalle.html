@@ -96,18 +96,20 @@
 </head>
 <body class="antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl bg-surface dark:bg-surface-container-low shadow-sm shadow-on-surface/5">
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-sm shadow-on-surface/5">
 <div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
-<div class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed">Artelía</div>
+<a href="home.html" class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed">Artelía</a>
 <ul class="hidden md:flex gap-8 font-headline tracking-tighter uppercase text-label-md">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400 hover:opacity-70 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Artists</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400 hover:opacity-70 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Collections</a></li>
-<li><a class="text-secondary dark:text-secondary-fixed border-b border-secondary hover:opacity-70 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Journal</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="home.html">Inicio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="galeria.html">Galería</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="exposiciones.html">Exposiciones</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="perfil.html">Artistas</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed border-b border-secondary" href="sobrenosotros.html">Contacto</a></li>
 </ul>
 <div class="flex gap-4">
-<button class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
-</button>
+<a href="../digital-art-gallery/index.html" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400" title="Volver a Galería Digital">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
 </div>
 </div>
 </nav>

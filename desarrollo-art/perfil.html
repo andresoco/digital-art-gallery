@@ -99,53 +99,51 @@
 <!-- TopNavBar (Mobile Only) -->
 <nav class="md:hidden glass-nav shadow-sm shadow-on-surface/5 text-primary font-headline tracking-tighter uppercase text-label-md fixed top-0 w-full z-50 transition-transform duration-300" id="mobile-nav">
 <div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
-<a class="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#">Artelía</a>
+<a class="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity duration-400" href="home.html">Artelía</a>
 <div class="flex gap-6 items-center">
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Artists</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Collections</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Journal</a>
-<button class="hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
-</button>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="home.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="galeria.html">Galería</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="exposiciones.html">Exposiciones</a>
+<a class="text-secondary hover:text-primary transition-colors duration-400" href="perfil.html">Artistas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="sobrenosotros.html">Contacto</a>
+<a href="../digital-art-gallery/index.html" class="hover:opacity-70 transition-opacity duration-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
 </div>
 </div>
 </nav>
 <!-- SideNavBar (Desktop Only) -->
-<aside class="hidden md:flex flex-col h-full py-12 px-6 bg-surface dark:bg-surface-container-high text-primary dark:text-primary-fixed font-body text-label-md uppercase tracking-widest h-full w-80 fixed left-0 top-0 z-[60] bg-surface-container-low dark:bg-surface-container-highest no shadows">
+<aside class="hidden md:flex flex-col h-full py-12 px-6 bg-surface dark:bg-surface-container-high text-primary dark:text-primary-fixed font-body text-label-md uppercase tracking-widest w-80 fixed left-0 top-0 z-[60] bg-surface-container-low dark:bg-surface-container-highest">
 <div class="mb-16">
-<h1 class="font-headline font-bold text-xl tracking-tighter">Artelía</h1>
+<h1 class="font-headline font-bold text-xl tracking-tighter"><a href="home.html" class="hover:opacity-70 transition-opacity">Artelía</a></h1>
 <p class="text-xs text-on-surface-variant mt-2 tracking-widest">The Gallery</p>
 </div>
 <nav class="flex-1 flex flex-col gap-8">
-<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="#">
-<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">gallery_thumbnail</span>
-<span>Current Expositions</span>
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="home.html">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors">home</span>
+<span>Inicio</span>
 </a>
-<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="#">
-<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
-<span>Digital Archives</span>
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="galeria.html">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors">gallery_thumbnail</span>
+<span>Galería</span>
 </a>
-<a class="text-primary dark:text-primary-fixed font-bold border-l-4 border-secondary pl-4 flex items-center gap-4 bg-surface-container-highest py-2" href="#">
-<span class="material-symbols-outlined text-xl text-secondary" style="font-variation-settings: 'FILL' 1;">edit_note</span>
-<span>Artist Residencies</span>
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="exposiciones.html">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors">auto_stories</span>
+<span>Exposiciones</span>
 </a>
-<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="#">
-<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">sensor_door</span>
-<span>Private Viewing</span>
+<a class="text-primary dark:text-primary-fixed font-bold border-l-4 border-secondary pl-4 flex items-center gap-4 bg-surface-container-highest py-2" href="perfil.html">
+<span class="material-symbols-outlined text-xl text-secondary">edit_note</span>
+<span>Artistas</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="sobrenosotros.html">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors">sensor_door</span>
+<span>Contacto</span>
 </a>
 </nav>
 <div class="mt-auto flex flex-col gap-6">
-<button class="bg-primary text-on-primary py-4 px-6 hover:bg-primary-container transition-colors duration-400 uppercase tracking-widest text-xs font-bold w-full text-center">
-                Request Catalog
-            </button>
-<div class="flex flex-col gap-4 pt-8 border-t border-outline-variant/15">
-<a class="text-on-surface-variant hover:text-primary transition-all duration-400 flex items-center gap-4 group text-xs" href="#">
-<span class="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100" style="font-variation-settings: 'FILL' 0;">settings</span>
-<span>Settings</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary transition-all duration-400 flex items-center gap-4 group text-xs" href="#">
-<span class="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100" style="font-variation-settings: 'FILL' 0;">help</span>
-<span>Support</span>
+<a href="../digital-art-gallery/index.html" class="bg-primary text-on-primary py-4 px-6 hover:bg-primary-container transition-colors duration-400 uppercase tracking-widest text-xs font-bold w-full text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+Volver
 </a>
 </div>
 </div>

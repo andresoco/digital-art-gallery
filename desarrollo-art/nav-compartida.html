@@ -1,0 +1,84 @@
+<!-- Barra de Navegación Compartida para Desarrollo-Art -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-surface-container-low shadow-sm shadow-on-surface/5 bg-white/80 backdrop-blur-md">
+  <div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+    <!-- Logo -->
+    <a class="text-2xl font-headline font-bold tracking-tighter text-primary" href="home.html">
+      Artelía
+    </a>
+
+    <!-- Navegación Principal (Desktop) -->
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="home.html">
+        Inicio
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="galeria.html">
+        Galería
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="exposiciones.html">
+        Exposiciones
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="perfil.html">
+        Artistas
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="sobrenosotros.html">
+        Contacto
+      </a>
+    </div>
+
+    <!-- Botones de Acciones -->
+    <div class="flex gap-4 items-center">
+      <!-- Menú Mobile (Hamburguesa) -->
+      <button class="md:hidden scale-100 active:scale-95 transition-transform hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" id="mobileMenuBtn">
+        <span class="material-symbols-outlined text-primary">menu</span>
+      </button>
+      
+      <!-- Botones de Herramientas -->
+      <button class="scale-100 active:scale-95 transition-transform hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" title="Ir a galería digital">
+        <a href="../digital-art-gallery/index.html" class="flex items-center">
+          <span class="material-symbols-outlined text-primary">arrow_back</span>
+        </a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú Mobile (Hidden por defecto) -->
+  <div class="hidden md:hidden absolute top-full left-0 right-0 bg-surface border-b border-surface-container-low" id="mobileMenu">
+    <div class="flex flex-col p-6 gap-4">
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400 py-2" href="home.html">
+        Inicio
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400 py-2" href="galeria.html">
+        Galería
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400 py-2" href="exposiciones.html">
+        Exposiciones
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400 py-2" href="perfil.html">
+        Artistas
+      </a>
+      <a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400 py-2" href="sobrenosotros.html">
+        Contacto
+      </a>
+      <hr class="my-2 border-surface-container-low" />
+      <a class="font-body text-sm text-secondary hover:text-primary transition-colors duration-400 py-2" href="../digital-art-gallery/index.html">
+        ← Volver a Galería Digital
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .glass-nav {
+    background: rgba(252, 249, 248, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+</style>
+
+<script>
+  // Toggle Mobile Menu
+  document.getElementById('mobileMenuBtn')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+  });
+</script>

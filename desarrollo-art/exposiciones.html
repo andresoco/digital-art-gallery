@@ -153,22 +153,19 @@
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-secondary selection:text-on-secondary">
 <!-- TopNavBar (Web & Tablet) -->
-<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-sm shadow-on-surface/5 flex justify-between items-center px-8 py-6 max-w-none hidden md:flex">
-<div class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed">
-            Artelía
-        </div>
-<nav class="flex gap-8 items-center font-headline tracking-tighter uppercase text-label-md">
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Artists</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Collections</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Journal</a>
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-sm shadow-on-surface/5 flex justify-between items-center px-8 py-6 max-w-none">
+<a href="home.html" class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed">Artelía</a>
+<nav class="hidden md:flex gap-8 items-center font-headline tracking-tighter uppercase text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="home.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="galeria.html">Galería</a>
+<a class="text-secondary border-b border-secondary hover:text-primary transition-colors duration-400" href="exposiciones.html">Exposiciones</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="perfil.html">Artistas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="sobrenosotros.html">Contacto</a>
 </nav>
 <div class="flex items-center gap-6">
-<button aria-label="Search" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
-</button>
-<button aria-label="shopping_bag" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
-</button>
+<a href="../digital-art-gallery/index.html" aria-label="Volver" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400" title="Volver a Galería Digital">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</a>
 </div>
 </header>
 <!-- SideNavBar (Mobile / Main Navigation context - hidden on large screens here, using standard nav layout strategy) -->
