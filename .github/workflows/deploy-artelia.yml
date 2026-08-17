@@ -1,0 +1,36 @@
+name: Build and deploy Artelía (arteliaApp)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'arteliaApp/**'
+      - '.github/workflows/deploy-artelia.yml'
+  workflow_dispatch: {}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (arteliaApp)
+        run: npm ci
+        working-directory: ./arteliaApp
+
+      - name: Build (arteliaApp)
+        run: npm run build
+        working-directory: ./arteliaApp
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./arteliaApp/dist

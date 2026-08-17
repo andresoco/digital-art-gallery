@@ -114,16 +114,16 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-sm shadow-on-surface/5">
 <div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
-<a href="home.html" class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed uppercase hover:opacity-70 transition-opacity">Artelía</a>
+<a href="/digital-art-gallery/desarrollo-art/home.html" class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed uppercase hover:opacity-70 transition-opacity">Artelía</a>
 <div class="hidden md:flex space-x-12">
-<a class="font-headline tracking-tighter uppercase text-label-md text-secondary dark:text-secondary-fixed border-b border-secondary hover:opacity-70 transition-opacity duration-400" href="home.html">Inicio</a>
+<a class="font-headline tracking-tighter uppercase text-label-md text-secondary dark:text-secondary-fixed border-b border-secondary hover:opacity-70 transition-opacity duration-400" href="/digital-art-gallery/desarrollo-art/home.html">Inicio</a>
 <a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400" href="galeria.html">Galería</a>
 <a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400" href="exposiciones.html">Exposiciones</a>
 <a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400" href="perfil.html">Artistas</a>
 <a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400" href="sobrenosotros.html">Contacto</a>
 </div>
 <div class="flex items-center space-x-6">
-<a href="../index.html" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400" title="Volver a Galería Digital">
+<a href="/digital-art-gallery/" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400" title="Volver a Galería Digital">
 <span class="material-symbols-outlined">arrow_back</span>
 </a>
 </div>
@@ -173,15 +173,15 @@
 <section class="relative min-h-[921px] flex items-center px-8 lg:px-24 bg-surface py-20">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
 <div class="lg:col-span-7 z-10">
-<h1 class="font-display text-display-lg text-primary mb-8 max-w-3xl">La estética de lo efímero.</h1>
-<p class="font-body text-lg text-on-surface-variant max-w-xl mb-12 border-l-2 border-secondary pl-6">
+<h1 class="font-display text-display-lg text-primary mb-8 max-w-3xl" data-i18n="home.title">La estética de lo efímero.</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-xl mb-12 border-l-2 border-secondary pl-6" data-i18n="home.desc">
                         Discover a curated selection of emerging digital and physical artworks. A space where ephemeral concepts become permanent collections.
                     </p>
 <div class="flex items-center space-x-8">
-<a class="bg-primary text-on-primary px-10 py-5 font-body uppercase text-sm tracking-widest hover:bg-primary-container transition-colors duration-400 inline-flex items-center justify-center" href="exposiciones.html">
+<a class="bg-primary text-on-primary px-10 py-5 font-body uppercase text-sm tracking-widest hover:bg-primary-container transition-colors duration-400 inline-flex items-center justify-center" href="exposiciones.html" data-i18n="home.ctaExplore">
                             Explore Exhibition
                         </a>
-<a class="text-primary font-body uppercase text-sm tracking-widest border-b-2 border-primary hover:border-secondary hover:text-secondary transition-colors duration-400 pb-1" href="galeria.html">
+<a class="text-primary font-body uppercase text-sm tracking-widest border-b-2 border-primary hover:border-secondary hover:text-secondary transition-colors duration-400 pb-1" href="galeria.html" data-i18n="home.ctaCatalog">
                             View Catalog
                         </a>
 </div>
@@ -201,10 +201,10 @@
 <section class="px-8 lg:px-24 py-32 bg-surface-container-low">
 <div class="mb-20 flex justify-between items-end">
 <div>
-<span class="font-body uppercase text-label-md tracking-widest text-secondary mb-4 block">Curated Selection</span>
-<h2 class="font-headline text-display-md text-primary">Permanent Archives</h2>
+<span class="font-body uppercase text-label-md tracking-widest text-secondary mb-4 block" data-i18n="home.curatedSelection">Curated Selection</span>
+<h2 class="font-headline text-display-md text-primary" data-i18n="home.archives">Permanent Archives</h2>
 </div>
-<a class="hidden md:flex text-primary font-body uppercase text-sm tracking-widest border-b border-primary hover:border-secondary hover:text-secondary transition-colors duration-400 pb-1 items-center" href="galeria.html">
+<a class="hidden md:flex text-primary font-body uppercase text-sm tracking-widest border-b border-primary hover:border-secondary hover:text-secondary transition-colors duration-400 pb-1 items-center" href="galeria.html" data-i18n="home.ctaCatalog">
                     All Works <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
 </a>
 </div>
@@ -214,7 +214,7 @@
 <div class="absolute top-6 left-6 z-10 bg-surface-container-high px-4 py-2 font-body text-label-sm uppercase text-on-surface">Abstract</div>
 <img alt="Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)]" data-alt="A large-scale contemporary abstract expressionist painting featuring bold, sweeping strokes of deep ink black and muted terracotta against a warm canvas-white background. The artwork is displayed in a brightly lit, high-end digital gallery setting, emphasizing texture and raw emotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnluOpGGA4pl6ot_ftY8knLQGePPUFxZ1Va3C2entbPdJJ8uk3juedISA_c4BKPVLsSn-8d8Fbj0syN8iMKqSjvqjqzwnBIANxOeqrm0zS1zRALzprGUhKmKNoYeoexlzzCuDeCff0e7cCZZIKWds7F4KerTAOFnH1l1HLbCs8zAH45hJ9CW3o3s0eKSGDgw2pUhqtc6lAaDMnpukxGXMRuO59ftlt9OnenU5WQVTvAzMZWdjQOOZDDQ"/>
 <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent">
-<h3 class="font-headline text-2xl text-surface">Echoes of Silence</h3>
+<h3 class="font-headline text-2xl text-surface" data-i18n="galeria.feature1">Echoes of Silence</h3>
 <p class="font-body text-surface-variant mt-2 uppercase tracking-widest text-xs">Elena Rostova • Oil on Canvas</p>
 </div>
 </div>
