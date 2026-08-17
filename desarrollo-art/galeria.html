@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artelía - Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: 300;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-container": "#838b73",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feb198",
+                        "tertiary": "#060c01",
+                        "on-secondary-fixed-variant": "#6d3825",
+                        "on-tertiary-fixed-variant": "#424935",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-primary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474746",
+                        "background": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "on-background": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#212121",
+                        "primary": "#0a0a0a",
+                        "on-secondary-container": "#79422e",
+                        "on-tertiary-fixed": "#171e0d",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#8a8888",
+                        "outline": "#747878",
+                        "tertiary-fixed-dim": "#c2caaf",
+                        "tertiary-fixed": "#dee6ca",
+                        "secondary": "#894f3b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed": "#370e02",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary-container": "#1c2312"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "sm": "0px",
+                        "md": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "2xl": "0px",
+                        "3xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.1rem" }],
+                        "label-md": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.1rem" }],
+                        "display-md": ["2.25rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em" }],
+                        "display-lg": ["3.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-primary font-body antialiased selection:bg-secondary selection:text-surface">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-sm shadow-on-surface/5 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<a class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">
+                Artelía
+            </a>
+<nav class="hidden md:flex space-x-12">
+<a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Artists</a>
+<a class="font-headline tracking-tighter uppercase text-label-md text-secondary dark:text-secondary-fixed border-b border-secondary pb-1" href="#">Collections</a>
+<a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Journal</a>
+</nav>
+<button aria-label="Shopping Bag" class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-40 pb-32">
+<!-- Editorial Header -->
+<section class="px-8 md:px-16 max-w-[2000px] mx-auto mb-20">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 border-b border-transparent">
+<h1 class="font-headline text-display-lg md:text-[6rem] leading-none tracking-tighter w-full md:w-2/3">
+                    Curated Excellence
+                </h1>
+<p class="font-body text-on-surface-variant max-w-sm text-lg leading-relaxed md:pb-4">
+                    Explore our definitive catalog of contemporary masterpieces, reflecting the vanguard of digital and physical mediums.
+                </p>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="px-8 md:px-16 max-w-[2000px] mx-auto mb-16 sticky top-24 z-40 bg-surface/90 backdrop-blur-md py-4">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<!-- Search Input -->
+<div class="relative w-full md:w-96 group">
+<span class="material-symbols-outlined absolute left-0 bottom-2 text-outline group-focus-within:text-secondary transition-colors duration-400" data-icon="search">search</span>
+<input class="w-full bg-transparent border-0 border-b border-outline pb-2 pl-8 focus:ring-0 focus:border-secondary text-primary font-body placeholder:text-outline transition-all duration-400 outline-none" placeholder="Search artists, titles, mediums..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-4">
+<span class="font-headline text-label-md text-on-surface-variant uppercase tracking-widest mr-2">Category</span>
+<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Oil</button>
+<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Sculpture</button>
+<button class="bg-primary text-surface text-label-sm uppercase px-4 py-2">Digital</button>
+<div class="w-px h-6 bg-surface-variant mx-2"></div>
+<span class="font-headline text-label-md text-on-surface-variant uppercase tracking-widest mr-2">Style</span>
+<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Minimalist</button>
+<button class="bg-surface-container-high text-primary text-label-sm uppercase px-4 py-2 hover:bg-primary hover:text-surface transition-colors duration-400">Abstraction</button>
+</div>
+</div>
+</section>
+<!-- Masonry Grid -->
+<section class="px-8 md:px-16 max-w-[2000px] mx-auto">
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8">
+<!-- Card 1 -->
+<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<div class="w-full h-auto min-h-[400px]">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A striking minimalist digital art piece featuring intersecting translucent geometric planes in muted sage and charcoal tones. The composition is highly asymmetrical, resting against a pure, bright off-white digital canvas. The lighting implies a soft, diffused gallery spotlight overhead, highlighting subtle gradients across the sharp-edged forms. The aesthetic is extremely high-end, clean, and architectural, emphasizing tonal depth over vibrant color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAkwNIxhCz18H4D7H5SUdzBgalDh0mQ1D_geAqNi0hDG2zt73fKiUAWbLKmgk3PoTNvbxTEymCVeWEbZruTpDskzQesS9XCmGO1EW6aNAY5044S0ihmCV5iwfmRRm-Qw9tJebho6_c9288xua58i3AthsDaua7tMooz8rGBvkfpFykEr6aqE77v3LXv_7-KxBi29oXUFdhK80E7lvOmwiwdUh_QVNPsHfnXfCRhIEJpMkC9uy9KSw2uw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-end p-8">
+<h2 class="font-headline text-surface text-2xl mb-1 tracking-tight">The Architecture of Silence</h2>
+<p class="font-body text-surface-variant text-label-sm uppercase tracking-widest mb-4">Elena Rostova</p>
+<div class="flex justify-between items-center text-secondary-fixed">
+<span class="font-body text-sm">$4,200</span>
+<span class="font-body text-sm opacity-70">2023</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<div class="w-full h-auto min-h-[500px]">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="An imposing, rough-hewn contemporary sculpture captured in a stark, high-key gallery setting. The piece is monolithic, resembling fractured obsidian or dark terracotta, contrasting sharply against the pristine white walls and soft natural daylight. The composition emphasizes the aggressive, sharp textures of the material against the smooth, empty space around it. The editorial photography style uses dramatic shadows to emphasize volume and weight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Rkgr96c4FtKd1dHFDJyMi1T0YLLBcunKTDID_Hyv62rGOClTMIvgAnJbVJgD8GHfDY5ndBM4VcgIMI6Y6gfIzuxn8_hb08OLQVvmYdpmWHCvCAFCd8uR0kk1oJMTZJr2R4zq4Czlo8eBzmembqJdVg-hRjfHzkXnWnxIWgwcmmTPTTBe-MbHtsgABoN-6bVfDLc64WJEE2vpOVmJgQJsdjk6OmHcPog4XYU-nCSVql7ShwqnBVE5vQ"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-end p-8">
+<h2 class="font-headline text-surface text-2xl mb-1 tracking-tight">Monolith IV</h2>
+<p class="font-body text-surface-variant text-label-sm uppercase tracking-widest mb-4">Julian Thorne</p>
+<div class="flex justify-between items-center text-secondary-fixed">
+<span class="font-body text-sm">$12,500</span>
+<span class="font-body text-sm opacity-70">2024</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<div class="w-full h-auto min-h-[350px]">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A large-scale abstract oil painting consisting of bold, sweeping strokes of deep ink black and terracotta red over a textured off-white canvas. The paint application is thick and expressive, yet the overall composition remains remarkably balanced and minimalist. Photographed straight-on in a brightly lit environment, showcasing the impasto technique and the raw canvas edges. The vibe is sophisticated, intense, and profoundly modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgDQUs9NEzpCdqaM21-jpsr9Eg9wH7-GJ1hQL15hNZrlnO28vX4kxxBB8LyEEVnDIeyJIZSGuPXFn07OF4HD0DkJbGVMw20xaWa2Nrq80hP6IvT-u0eYnwvLeqzBFAALBDJFJ4u-3lYYrWa7utCuqZwmEXC0skScqolqMAUjbjxZbat7MW8mATPNu6L_uCuvxujytPwPN2_dYhSrjK4lZ4y-bMwh6EjsfNuHLJjG2HR-VC-BJKAKFwYw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-end p-8">
+<h2 class="font-headline text-surface text-2xl mb-1 tracking-tight">Sanguine Variations</h2>
+<p class="font-body text-surface-variant text-label-sm uppercase tracking-widest mb-4">Marcus Vance</p>
+<div class="flex justify-between items-center text-secondary-fixed">
+<span class="font-body text-sm">$8,900</span>
+<span class="font-body text-sm opacity-70">2022</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<div class="w-full h-auto min-h-[600px]">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A serene digital artwork depicting an ethereal, almost invisible wireframe structure suspended in a vast, foggy void. The color palette is strictly limited to subtle gradients of soft white and pale gray, creating an illusion of infinite depth. The extreme minimalism evokes a sense of calm and technological spirituality. The lighting is completely uniform, eliminating all harsh shadows to maintain a dreamlike, high-end gallery presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD2esPDx_Ik74tG5UkxlrI9IYbA_9Pa0GWgEl1_B2I_aYwXxRxde0WrAKtA5l4ayckeY291gQID8daJTAyaSXJ-FX2cMnjqPZjNxJwOD0rTaillScboRVAXrLsqZ_G4hedLYwNcJQ9of60tluV7uf6EkEhUzewcZsFWvtnIWpkz9-OnWn2hghp8fX09buIEvhqcgV2wv4yjxBR6mkfH65DsQT1_dxNuRo8mPS8_IhCVfVj4kddZVVLew"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-end p-8">
+<h2 class="font-headline text-surface text-2xl mb-1 tracking-tight">Ether Frame</h2>
+<p class="font-body text-surface-variant text-label-sm uppercase tracking-widest mb-4">Sarah Lin</p>
+<div class="flex justify-between items-center text-secondary-fixed">
+<span class="font-body text-sm">$3,100</span>
+<span class="font-body text-sm opacity-70">2024</span>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="relative group cursor-pointer break-inside-avoid overflow-hidden bg-surface-container-low">
+<div class="w-full h-auto min-h-[300px]">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="An intimate detail shot of an oil painting focusing solely on the interaction between a stark black shape and a textured, unpainted linen surface. The composition relies heavily on negative space and severe asymmetry. The lighting highlights the subtle grain of the canvas and the matte finish of the black pigment. It feels like a fragmented piece of a larger, highly intellectual abstract expressionist work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb6yNbbNCBbIhqrXwHPN32pI_0Uig-4MbddM6dWXssCGVc5AS33lojbAXDQl2WJ0Z7-C97mbAh-8uIuOS14PPLcBFCY3XYcea6mGZvrJJntraBN_a4c3cUY5-hgvvdfWkVXOsP6GSngamajf08BGLr5K4MEXQIBLQkwqF1sJbCVhVy_zlFUwHXGCxgsCvVfJ8tNvYjwDn0QTIAKQNMIDIZX-FvsRGKAN0OU4GCy7JO0489e4_0swZYlw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-end p-8">
+<h2 class="font-headline text-surface text-2xl mb-1 tracking-tight">Study in Void</h2>
+<p class="font-body text-surface-variant text-label-sm uppercase tracking-widest mb-4">Anon</p>
+<div class="flex justify-between items-center text-secondary-fixed">
+<span class="font-body text-sm">$1,800</span>
+<span class="font-body text-sm opacity-70">2021</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container text-on-primary dark:text-primary-fixed-dim font-body text-sm tracking-normal w-full relative mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full max-w-[2000px] mx-auto">
+<div>
+<h2 class="font-headline text-3xl italic text-secondary-fixed mb-6">Artelía</h2>
+<p class="text-on-primary-container">Elevating the digital and physical canvas.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="text-on-primary-container hover:text-on-primary hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Newsletter Signup</a>
+<a class="text-on-primary-container hover:text-on-primary hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Press Kit</a>
+<a class="text-on-primary-container hover:text-on-primary hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-on-primary hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+</div>
+<div class="flex items-end justify-start md:justify-end">
+<p class="text-on-primary-container">© 2024 Artelía Digital Gallery. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

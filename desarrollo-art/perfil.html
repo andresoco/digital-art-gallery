@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artist Profile | Artelía</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-container": "#838b73",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feb198",
+                        "tertiary": "#060c01",
+                        "on-secondary-fixed-variant": "#6d3825",
+                        "on-tertiary-fixed-variant": "#424935",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-primary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474746",
+                        "background": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "on-background": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#212121",
+                        "primary": "#0a0a0a",
+                        "on-secondary-container": "#79422e",
+                        "on-tertiary-fixed": "#171e0d",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#8a8888",
+                        "outline": "#747878",
+                        "tertiary-fixed-dim": "#c2caaf",
+                        "tertiary-fixed": "#dee6ca",
+                        "secondary": "#894f3b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed": "#370e02",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary-container": "#1c2312"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        h1, h2, h3, h4, h5, h6, .font-headline, .font-display { font-family: 'Noto Serif', serif; }
+        .glass-nav { background: rgba(252, 249, 248, 0.8); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+        .silky-gradient { background: linear-gradient(135deg, theme('colors.primary') 0%, theme('colors.primary-container') 100%); }
+        .ambient-shadow { box-shadow: 0 20px 40px rgba(28, 27, 27, 0.06); }
+        .text-balance { text-wrap: balance; }
+        
+        /* High-End Editorial Specifics */
+        .editorial-column { border-left: 1px solid transparent; } /* Replaced border with bg shifts in layout */
+        .img-reveal { animation: imgReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        @keyframes imgReveal {
+            0% { transform: scale(1.05); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col pt-24 md:pt-0 md:pl-80">
+<!-- TopNavBar (Mobile Only) -->
+<nav class="md:hidden glass-nav shadow-sm shadow-on-surface/5 text-primary font-headline tracking-tighter uppercase text-label-md fixed top-0 w-full z-50 transition-transform duration-300" id="mobile-nav">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<a class="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#">Artelía</a>
+<div class="flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Artists</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Journal</a>
+<button class="hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-full py-12 px-6 bg-surface dark:bg-surface-container-high text-primary dark:text-primary-fixed font-body text-label-md uppercase tracking-widest h-full w-80 fixed left-0 top-0 z-[60] bg-surface-container-low dark:bg-surface-container-highest no shadows">
+<div class="mb-16">
+<h1 class="font-headline font-bold text-xl tracking-tighter">Artelía</h1>
+<p class="text-xs text-on-surface-variant mt-2 tracking-widest">The Gallery</p>
+</div>
+<nav class="flex-1 flex flex-col gap-8">
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">gallery_thumbnail</span>
+<span>Current Expositions</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span>Digital Archives</span>
+</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-l-4 border-secondary pl-4 flex items-center gap-4 bg-surface-container-highest py-2" href="#">
+<span class="material-symbols-outlined text-xl text-secondary" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+<span>Artist Residencies</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 flex items-center gap-4 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">sensor_door</span>
+<span>Private Viewing</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-6">
+<button class="bg-primary text-on-primary py-4 px-6 hover:bg-primary-container transition-colors duration-400 uppercase tracking-widest text-xs font-bold w-full text-center">
+                Request Catalog
+            </button>
+<div class="flex flex-col gap-4 pt-8 border-t border-outline-variant/15">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-400 flex items-center gap-4 group text-xs" href="#">
+<span class="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-400 flex items-center gap-4 group text-xs" href="#">
+<span class="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100" style="font-variation-settings: 'FILL' 0;">help</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col relative w-full overflow-x-hidden">
+<!-- Hero Section: Artist Portrait & Bio -->
+<section class="w-full bg-surface grid grid-cols-1 lg:grid-cols-12 min-h-[870px]">
+<!-- Portrait Column -->
+<div class="lg:col-span-5 h-[614px] lg:h-auto relative overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center img-reveal" data-alt="A striking, high-end editorial black and white portrait of a contemporary artist in their studio. The lighting is dramatic, high-contrast chiaroscuro, emphasizing the texture of their creative environment. They are looking thoughtfully away from the camera, embodying a serene, intense mood. The style is modern, minimalist, and deeply sophisticated, aligning perfectly with a premium digital art gallery aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoSblTzAx9sfDeWP6tfrQsUB9zYmuhIiR2fRCTP-foNoJJuq2PQXCJ3mEL1PmK7kcDbxWul4WOfTsVYwTMpt5R_9spG4YSxLqcK6qk0ehg3ygifg05Hh7SJc67zNR1QO0In3X-7Uoj9DnMkiwYp3VjdB3OG7TVCf19cB9wZP2JFS5YrJj38Sq6AEvQTStE_iMknakC9juOrsCH7y3o9SiRgrAESE1UdilQjZj239Vo26c_rzkxopCI0g')"></div>
+<!-- Subtle Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+</div>
+<!-- Biography Column -->
+<div class="lg:col-span-7 flex flex-col justify-center px-8 lg:px-24 py-16 lg:py-0 bg-surface z-10 relative">
+<!-- Curator Chip -->
+<div class="self-start mb-8 bg-surface-container-high px-3 py-1 font-body text-xs uppercase tracking-widest text-on-surface">
+                    Artist in Residence
+                </div>
+<h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tighter text-primary mb-4 leading-[0.9]">
+                    Elias<br/>Vanguard
+                </h1>
+<p class="font-body text-label-md uppercase tracking-[0.15em] text-secondary mb-12 flex items-center gap-2">
+<span class="w-8 h-[1px] bg-secondary inline-block"></span>
+                    Contemporary Abstract
+                </p>
+<div class="font-headline text-xl lg:text-2xl text-on-surface/80 leading-relaxed max-w-2xl text-balance mb-12">
+                    "My work seeks to capture the silent tension between architectural geometry and the chaotic nature of human emotion. Each canvas is a structured rebellion."
+                </div>
+<div class="font-body text-base text-on-surface-variant leading-loose max-w-2xl mb-12 space-y-6">
+<p>
+                        Emerging from the brutalist structures of modern urban environments, Vanguard’s recent collections explore the dichotomy of hard lines and soft shadows. His monochromatic approach strips away the distraction of color, forcing the viewer to confront form and negative space.
+                    </p>
+</div>
+<!-- Contact CTA -->
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-8 py-5 font-body uppercase text-sm tracking-widest hover:bg-primary-container transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                        Inquire About Works
+                    </button>
+<button class="text-primary font-body uppercase text-sm tracking-widest hover:text-secondary transition-colors duration-400 flex items-center gap-2 group pb-1 border-b border-primary hover:border-secondary">
+                        Read Full Manifesto
+                        <span class="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Stats / Milestones Section (Tonal Shift) -->
+<section class="w-full bg-surface-container-low py-24 px-8 lg:px-24">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="font-display text-4xl lg:text-5xl text-primary font-bold">24</span>
+<span class="font-body text-xs uppercase tracking-widest text-on-surface-variant">Solo Exhibitions</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display text-4xl lg:text-5xl text-primary font-bold">12</span>
+<span class="font-body text-xs uppercase tracking-widest text-on-surface-variant">International Awards</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display text-4xl lg:text-5xl text-primary font-bold">8</span>
+<span class="font-body text-xs uppercase tracking-widest text-on-surface-variant">Museum Collections</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display text-4xl lg:text-5xl text-primary font-bold">2018</span>
+<span class="font-body text-xs uppercase tracking-widest text-on-surface-variant">Active Since</span>
+</div>
+</div>
+</section>
+<!-- Selected Works Grid (Bento Style) -->
+<section class="w-full bg-surface py-32 px-8 lg:px-12">
+<div class="flex justify-between items-end mb-20 max-w-[1400px] mx-auto">
+<h2 class="font-display text-4xl lg:text-5xl font-bold tracking-tighter text-primary">Selected Works</h2>
+<button class="text-primary font-body uppercase text-xs tracking-widest hover:text-secondary transition-colors duration-400 pb-1 border-b border-primary hover:border-secondary hidden md:block">
+                    View Complete Archive
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 max-w-[1400px] mx-auto auto-rows-[400px]">
+<!-- Large Feature Piece -->
+<article class="md:col-span-8 row-span-2 group relative overflow-hidden bg-surface-container-lowest flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A striking, high-contrast monochromatic abstract painting featuring stark geometric shapes intersecting with fluid, organic ink washes. The artwork is presented in a minimalist gallery setting with pure white walls and soft, ambient directional lighting that highlights the texture of the canvas. The mood is severe yet elegant, perfectly fitting a high-end contemporary art gallery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcVA8Hbl3A1wWzbS1M8QgCU83IaJBGZgCo_0Q38JZbpbMietS_0NYJ4TMQSH3Ie0owBizzDi2Ongo3pQyBwd8rc4RHFQ6ngtEeTl3wKRsUurL3Xh9QbhKh44jScYeYkITO7CJDlbgBc5AkUDr9tvz4eGSThoQEXiaNW6UtJs3Nsbh1KquMMtOWxf3HG6pJM50iP1KXiu7B2kgo2_b8LvZqbg8gQEy9GTyj0AmDVmdA1GzgCEDwshav2A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 p-8 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<div class="font-body text-xs uppercase tracking-widest text-secondary-fixed mb-2">2023</div>
+<h3 class="font-display text-2xl text-on-primary font-bold mb-1">Structural Silence I</h3>
+<p class="font-body text-sm text-on-primary/70">Oil and charcoal on linen</p>
+</div>
+</article>
+<!-- Vertical Piece -->
+<article class="md:col-span-4 row-span-2 group relative overflow-hidden bg-surface-container-lowest flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A tall, vertical abstract artwork composed entirely of deep blacks, charcoal greys, and stark whites. It resembles fractured architectural brutalist forms fading into a soft, hazy mist. The lighting is pristine and museum-quality, casting subtle shadows to emphasize the thick impasto texture of the paint. The aesthetic is extremely modern and sophisticated." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuxPOZfjVyLHTe6x4iN6y25e59Qs0t0bOoUTJ4ui8EvTK8zUDn2NDC_aQcP0O2yeGv1pkUcEa0zfgd8Em4LW2rmlgi88BTGGF-rKbvjrtyb1AdTgifZ3jJ9svq5-NcMm-KSc0vfr6n3YNiHXxyXIHPO2QrzvmgYO22h12__3T0940LZfDJfaersvsufA-VHPHqYzsHX-tDeslVK-HR3I7A7iVv_cqC25LhMsMIGVirgKAtadN_9sFppg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 p-8 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<div class="font-body text-xs uppercase tracking-widest text-secondary-fixed mb-2">2022</div>
+<h3 class="font-display text-xl text-on-primary font-bold mb-1">Fractured Monolith</h3>
+<p class="font-body text-sm text-on-primary/70">Mixed media on wood panel</p>
+</div>
+</article>
+<!-- Standard Square 1 -->
+<article class="md:col-span-6 row-span-1 group relative overflow-hidden bg-surface-container-lowest flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A minimalist contemporary artwork showing a single, perfect black circle against a vast expanse of off-white textured canvas. The lighting is bright and diffuse, creating a sense of serene emptiness and focus. The style is reductive and highly disciplined, suitable for a high-end digital gallery presentation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRwJK8m8uAOfMgH9B5Glt9x3ReuH7boSATf-Fzpdl3OtQDWlQpHAdBD5zJlbCR0QVdujR2APbR5p-oYZ8DVqwUeDCu8F3forNa45Sa4Vqjo3DshNPICXr0kxtaIssxCmOJH7SEcvp1djlTnB_p1WQdgnHkzK-QzIB4P80vJ9OzYWKjmu-IIZJxE1rf4axQGpJZs1v-yODPrjNanceLQiv4LbaKTcgn0cCO3OBc9MB6sEyLMYRtARMGQw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<h3 class="font-display text-lg text-on-primary font-bold mb-1">Void State</h3>
+<p class="font-body text-xs text-on-primary/70">Graphite on paper</p>
+</div>
+</article>
+<!-- Standard Square 2 -->
+<article class="md:col-span-6 row-span-1 group relative overflow-hidden bg-surface-container-lowest flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" data-alt="A dynamic, monochromatic abstract expressionist piece with aggressive, sweeping brushstrokes in jet black over a pale grey background. The image is cropped tightly to focus on the interplay of texture and gesture. The lighting is crisp and cool, enhancing the stark contrast of the composition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJ8OivHyzPGf1h6yD4Fo1WTu126hTSA9prvO4zKZmgi_IIuIpAcT83UbJhpXdyfzqWGamOwnlrsikydrPcD1yOIU5P9v1H-QSSkG8humorW9jOvsfZdJIQUPZvyxHfCghgfQW1Gql0Gi2LeshEomOmnf6fOtpuKZw3HZ-NLUKw3cUe7ituPiUV9TUpu-kquNjfPIZAyQGCAQDf0jqESu_Bw9QeUigNkkWKTR1RGEus-anA7bGuZotEUA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<h3 class="font-display text-lg text-on-primary font-bold mb-1">Velocity II</h3>
+<p class="font-body text-xs text-on-primary/70">Acrylic on canvas</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Footer from JSON -->
+<footer class="w-full relative mt-24 bg-primary dark:bg-tertiary-container grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full flat no shadows text-on-primary dark:text-primary-fixed-dim font-body text-sm tracking-normal">
+<div class="flex flex-col justify-between">
+<span class="font-headline text-3xl italic text-secondary-fixed">Artelía</span>
+<p class="mt-8 text-on-primary-container text-xs">© 2024 Artelía Digital Gallery. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-primary-container hover:text-on-primary transition-colors duration-400 hover:text-secondary-fixed opacity-100 hover:opacity-80 w-max" href="#">Newsletter Signup</a>
+<a class="text-on-primary-container hover:text-on-primary transition-colors duration-400 hover:text-secondary-fixed opacity-100 hover:opacity-80 w-max" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-primary-container hover:text-on-primary transition-colors duration-400 hover:text-secondary-fixed opacity-100 hover:opacity-80 w-max" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-on-primary transition-colors duration-400 hover:text-secondary-fixed opacity-100 hover:opacity-80 w-max" href="#">Privacy Policy</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple script to handle scroll events for mobile nav styling if needed
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mobile-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Artelía</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-container": "#838b73",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feb198",
+                        "tertiary": "#060c01",
+                        "on-secondary-fixed-variant": "#6d3825",
+                        "on-tertiary-fixed-variant": "#424935",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-primary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474746",
+                        "background": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "on-background": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#212121",
+                        "primary": "#0a0a0a",
+                        "on-secondary-container": "#79422e",
+                        "on-tertiary-fixed": "#171e0d",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#8a8888",
+                        "outline": "#747878",
+                        "tertiary-fixed-dim": "#c2caaf",
+                        "tertiary-fixed": "#dee6ca",
+                        "secondary": "#894f3b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed": "#370e02",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary-container": "#1c2312"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--tw-colors-primary), var(--tw-colors-primary-container));
+        }
+        /* Floating Label CSS */
+        .floating-input:focus-within label,
+        .floating-input input:not(:placeholder-shown) + label,
+        .floating-input textarea:not(:placeholder-shown) + label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: var(--tw-colors-secondary);
+        }
+        .floating-input input:focus, .floating-input textarea:focus {
+            border-bottom-color: var(--tw-colors-secondary);
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-primary font-body antialiased selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-surface-container-low shadow-sm shadow-on-surface/5">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<a class="text-2xl font-headline font-bold tracking-tighter text-primary" href="#">Artelía</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Artists</a>
+<a class="font-headline tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors duration-400" href="#">Collections</a>
+<a class="font-headline tracking-tighter uppercase text-sm text-secondary border-b border-secondary" href="#">Journal</a> <!-- Journal active for About/Vision context -->
+</div>
+<div class="flex gap-4 items-center">
+<button class="scale-100 active:scale-95 transition-transform hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<span aria-label="Search" class="material-symbols-outlined text-primary">search</span>
+</button>
+<button class="scale-100 active:scale-95 transition-transform hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<span aria-label="shopping_bag" class="material-symbols-outlined text-primary">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="pt-32 pb-24 min-h-screen">
+<!-- The Curator's Vision (Hero/Editorial) -->
+<section class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-32">
+<div class="lg:col-span-5 flex flex-col justify-center">
+<h1 class="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-8">The Curator's Vision</h1>
+<p class="font-body text-lg text-on-surface-variant mb-6 leading-relaxed">Artelía exists in the negative space. We are not merely a gallery, but a curated silence where the voice of the emerging artist can resonate with clarity.</p>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">Our mission is to unearth the profound and present it without distraction, honoring the tension between form, function, and raw emotion.</p>
+<div class="mt-12 w-32 h-[1px] bg-outline-variant"></div>
+<div class="mt-8">
+<p class="font-headline italic text-xl text-primary mb-2">"True curation is an act of removal."</p>
+<p class="font-body text-sm uppercase tracking-widest text-secondary">— The Founder</p>
+</div>
+</div>
+<div class="lg:col-span-7 relative">
+<!-- Asymmetric overlapping image layout -->
+<div class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-[10s] hover:scale-105" data-alt="A striking portrait of a contemporary gallery curator in a minimal, brightly lit exhibition space. The curator is thoughtfully observing an abstract painting. Soft, diffused lighting highlights the texture of the gallery walls. High-end editorial photography style, muted color palette with deep blacks and stark whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2PUk95vyNhBaUFonB90VEHX3f_oiZvA-l5A5Dcl6Of_JDqnCy9JHOvlptGQM4pN1aEolRuA2o_TNeGhU-pxW36waE51842U8U2n_vgg-OVFwo-dMyYhQ7xrRuGs8y1okd4g4tU3_GbROcdiT-jgmmWQrvmCOFJ6uXhi3iZxaGo1YBSAljuALnRcohw9wGOMlLOwrvJXoPJeDlZ4OaIpudMVqYMMvREDD4hCaTHUR06Zi9Ax-fTR_4uw"/>
+</div>
+<div class="absolute -bottom-16 -left-16 w-1/2 aspect-square bg-surface-container border border-surface-container-low z-10 hidden md:block">
+<img class="w-full h-full object-cover" data-alt="A close-up detail shot of thick, textured oil paint on canvas. The abstract strokes are primarily in muted terracottas and stark blacks against an off-white background. The lighting is directional, emphasizing the 3D relief of the impasto technique. Minimalist and raw aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0I14zefaTJJw_ViYoMyPqTCeiBPZ_VhyQBJG3cf1OHgZceXY3py2cMdPHSLShnd3uzO-deCAGzbJIx1eUZcWOQv39ERssMQ9Busy8mEeP9cU8nmyksWcVkanoUsE0j3h-5iAhQD1MUK1-VKts5Yv_t6QMdM8ZlYsTf8zt8-ANNpc_hDZeXtYZFlNsYc5d-4FSmHw8gfz3ryoEB41kfGGoy3B8FKB37DSlgGtGocP22yqRJB7fwRq_Qw"/>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-24">
+<!-- Inquiry Form -->
+<div>
+<h2 class="font-display text-4xl font-bold tracking-tighter mb-4">Inquiries</h2>
+<p class="font-body text-on-surface-variant mb-12">For private viewings, acquisitions, or artist representation requests.</p>
+<form class="space-y-10">
+<div class="relative floating-input">
+<input class="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 peer placeholder-transparent" id="name" placeholder="Name" required="" type="text"/>
+<label class="absolute left-0 top-2 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none" for="name">Full Name</label>
+</div>
+<div class="relative floating-input">
+<input class="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 peer placeholder-transparent" id="email" placeholder="Email" required="" type="email"/>
+<label class="absolute left-0 top-2 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none" for="email">Email Address</label>
+</div>
+<div class="relative floating-input pt-4">
+<textarea class="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 peer placeholder-transparent resize-none" id="message" placeholder="Message" required="" rows="4"></textarea>
+<label class="absolute left-0 top-6 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none" for="message">Your Message</label>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 font-body text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]" type="submit">Submit Inquiry</button>
+</form>
+</div>
+<!-- Minimalist Map & Details -->
+<div class="flex flex-col justify-between">
+<div class="bg-surface p-8 border border-outline-variant/15 shadow-[0_20px_40px_rgba(28,27,27,0.06)] h-64 relative overflow-hidden group">
+<!-- Placeholder for Map -->
+<div class="absolute inset-0 bg-surface-container-highest transition-transform duration-1000 group-hover:scale-105" data-location="Paris" style=""></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="mt-12 grid grid-cols-2 gap-8">
+<div>
+<h3 class="font-body text-sm font-bold uppercase tracking-widest text-primary mb-2">Location</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">14 Rue de la Paix<br/>75002 Paris, France</p>
+</div>
+<div>
+<h3 class="font-body text-sm font-bold uppercase tracking-widest text-primary mb-2">Hours</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">Tuesday — Saturday<br/>11:00 AM — 6:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary dark:bg-tertiary-container text-on-primary dark:text-primary-fixed-dim w-full relative mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full max-w-7xl mx-auto">
+<div class="flex flex-col justify-between">
+<span class="font-headline text-3xl italic text-secondary-fixed">Artelía</span>
+<p class="font-body text-sm tracking-normal text-on-primary-container mt-12 md:mt-0">© 2024 Artelía Digital Gallery. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Newsletter Signup</a>
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

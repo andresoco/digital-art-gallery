@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artelía - Artwork Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffdbcf",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#5f5e5e",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary-container": "#838b73",
+                      "on-surface": "#1c1b1b",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#feb198",
+                      "tertiary": "#060c01",
+                      "on-secondary-fixed-variant": "#6d3825",
+                      "on-tertiary-fixed-variant": "#424935",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#e5e2e1",
+                      "secondary-fixed-dim": "#ffb59c",
+                      "surface-variant": "#e5e2e1",
+                      "surface": "#fcf9f8",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-primary": "#c8c6c5",
+                      "on-primary-fixed-variant": "#474746",
+                      "background": "#fcf9f8",
+                      "surface-container": "#f0eded",
+                      "on-background": "#1c1b1b",
+                      "outline-variant": "#c4c7c7",
+                      "surface-bright": "#fcf9f8",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#444748",
+                      "surface-container-low": "#f6f3f2",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#1c1b1b",
+                      "primary-container": "#212121",
+                      "primary": "#0a0a0a",
+                      "on-secondary-container": "#79422e",
+                      "on-tertiary-fixed": "#171e0d",
+                      "inverse-surface": "#313030",
+                      "on-primary-container": "#8a8888",
+                      "outline": "#747878",
+                      "tertiary-fixed-dim": "#c2caaf",
+                      "tertiary-fixed": "#dee6ca",
+                      "secondary": "#894f3b",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-secondary-fixed": "#370e02",
+                      "surface-container-high": "#eae7e7",
+                      "tertiary-container": "#1c2312"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Noto Serif"
+                      ],
+                      "display": [
+                              "Noto Serif"
+                      ],
+                      "body": [
+                              "Manrope"
+                      ],
+                      "label": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {}
+      },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: theme('colors.surface'); color: theme('colors.primary'); }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl bg-surface dark:bg-surface-container-low shadow-sm shadow-on-surface/5">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<div class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed">Artelía</div>
+<ul class="hidden md:flex gap-8 font-headline tracking-tighter uppercase text-label-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400 hover:opacity-70 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Artists</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-400 hover:opacity-70 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Collections</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed border-b border-secondary hover:opacity-70 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Journal</a></li>
+</ul>
+<div class="flex gap-4">
+<button class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto w-full">
+<!-- Artwork Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-32">
+<!-- Image Column -->
+<div class="lg:col-span-7 relative group">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYnt1vRV3yZGIA56ZMrI8K8GqFdUPBR3hrlN-ZrD8kb58flL0M_UJinixcERAbnXgRWzSHfh6b_aBGKLr_lTVpwN0QGt_Y9HtiOj1AU_n0DuaHB5GAVh3hYVXLxc8ES94JRDV6YD3qNo6-WfFSgWofSZ95gx0oq-Jb-CE9hvUmyvkO0hxJQR4M-YWStZjFWurb3u85zyXI8XrrjhTLe6Fn3BhpNeVGlBRhcZhi3rIwmPfwKkpfCO9VEA"/>
+</div>
+</div>
+<!-- Detail Column -->
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="mb-8">
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-headline tracking-tight text-primary mb-4">Ethereal Constructs</h1>
+<p class="text-2xl font-headline text-on-surface-variant italic">Elara Vance, 2024</p>
+</div>
+<div class="space-y-6 mb-12">
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        An exploration of negative space and digital fragility. Vance's latest work challenges the perception of permanence in the digital age, utilizing procedural generation to create forms that feel both organic and fundamentally synthetic.
+                    </p>
+</div>
+<div class="bg-surface-container-low p-8 mb-12 border-l-4 border-secondary">
+<h3 class="font-headline text-xl mb-4 text-primary">Technical Details</h3>
+<ul class="space-y-3 font-body text-sm tracking-wide text-on-surface-variant uppercase">
+<li><span class="font-bold text-primary mr-2">Medium:</span> Algorithmic Projection on Canvas</li>
+<li><span class="font-bold text-primary mr-2">Dimensions:</span> 120 x 180 cm</li>
+<li><span class="font-bold text-primary mr-2">Edition:</span> Unique Work (1 of 1)</li>
+</ul>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-body uppercase tracking-widest text-sm hover:bg-primary-container transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                        Inquire
+                    </button>
+<button class="border border-outline text-primary px-8 py-4 font-body uppercase tracking-widest text-sm hover:border-primary transition-colors duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                        View in Room
+                    </button>
+</div>
+</div>
+</section>
+<!-- Related Works -->
+<section class="mt-32">
+<h2 class="text-3xl font-headline text-primary mb-12">Related Works</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Art Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]" data-alt="A minimalist abstract painting composed of sweeping, textured brushstrokes in deep terracotta and muted sage on a pristine off-white canvas. The lighting is soft and natural, emphasizing the subtle impasto texture of the paint. The piece exudes a calm, earthy elegance consistent with a high-end contemporary art gallery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF_1HV-F7kwV8cxHKIbUWx8LBG4TLSqYGK-aX-LSH2xpdMK9XFugtlptg2Ii3_OH6Jcl1biNsbuYYpzRTbKXbgmfn1hs48agZffapD9Avo0M0-RSEY5NlTTaynaIJuBKKzvfuh6cPPhAJFUFM1cuEbFNTU0vUEreyGMGm5aT3D_GW6AMvuyyYNBZsMVql2m60ugWShJ4x22FRvpWDeAUMCCOZWS6OQIEN4aDCwjC18fbjhVSJ_c5ITNw"/>
+</div>
+<h4 class="font-headline text-lg text-primary">Terra Echoes</h4>
+<p class="font-body text-sm text-on-surface-variant">Julian Thorne</p>
+</div>
+<!-- Art Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]" data-alt="A striking black and white fine art photograph of architectural brutalist forms. Strong, dramatic lighting casts deep shadows, highlighting the raw concrete textures and sharp geometric angles. The image has a very high contrast, moody, and sophisticated editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyJPSjs__tsO3FrgG01jNRnad7hquxGTxUHCOja7-psiUK2UdP8Z_Tl1iWuKv2rbOg1jh3wTqDtlhSRWjjPfoRu1cplgCzTCr5bRO9vOEq_fy6NFzVWf0vYbM3AwWEEJPrLRc-dm9DYZ0ToIeMMYx8ws5wuirXQNSh__-DtzdDI70w8Yo2iePD2R2Ce-8b5jbOjnl_mxkhO2DKsWSwNhp0vhxrVWys1QO6WGcvyQQoJE67orBBhZd1FA"/>
+</div>
+<h4 class="font-headline text-lg text-primary">Monolith IV</h4>
+<p class="font-body text-sm text-on-surface-variant">Sarah Chen</p>
+</div>
+<!-- Art Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]" data-alt="A delicate botanical study rendered in charcoal on textured, handmade paper. The lines are incredibly fine and precise, capturing the fragile details of dried flora. The artwork is presented in a very bright, minimalist context, emphasizing the contrast between the dark ink and the warm white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKq9GsAbZfiKpTahZsaI6IKwvwjv9UUREjspKp0pLiVCKMDfZ74g8TnZZzrYJYUevFIy7I_ky1Mkicre-yOWYOXVUvWmGKf5tSKgtx25QhHQ-M-lLq_uAmFZCCIYZAFGkfq3o9OmmWjkwcq4bPIdpKSw2j1Sskic58T63G5YcQBjnyRD4E0tijo9bYGMpS9UeLVQrcB1QFJZt_reQWPcVsUnL2RGO-solboGBxrdDAyRUpkgpXDok-JA"/>
+</div>
+<h4 class="font-headline text-lg text-primary">Winter Flora</h4>
+<p class="font-body text-sm text-on-surface-variant">David K. Reynolds</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative mt-24 bg-primary dark:bg-tertiary-container text-on-primary dark:text-primary-fixed-dim bg-primary dark:bg-tertiary-container flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full font-body text-sm tracking-normal">
+<div>
+<div class="font-headline text-3xl italic text-secondary-fixed mb-6">Artelía</div>
+<p>© 2024 Artelía Digital Gallery. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Newsletter Signup</a>
+<a class="text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

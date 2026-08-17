@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artelía | The Digital Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-container": "#838b73",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feb198",
+                        "tertiary": "#060c01",
+                        "on-secondary-fixed-variant": "#6d3825",
+                        "on-tertiary-fixed-variant": "#424935",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-primary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474746",
+                        "background": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "on-background": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#212121",
+                        "primary": "#0a0a0a",
+                        "on-secondary-container": "#79422e",
+                        "on-tertiary-fixed": "#171e0d",
+                        "inverse-surface": "#313030",
+                        "on-primary-container": "#8a8888",
+                        "outline": "#747878",
+                        "tertiary-fixed-dim": "#c2caaf",
+                        "tertiary-fixed": "#dee6ca",
+                        "secondary": "#894f3b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed": "#370e02",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary-container": "#1c2312"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "none": "0px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+                        "display-md": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+                        "label-md": ["1rem", { lineHeight: "1.5", letterSpacing: "0.1rem" }],
+                        "label-sm": ["0.875rem", { lineHeight: "1.5", letterSpacing: "0.1rem" }]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #fcf9f8;
+            color: #0a0a0a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .gallery-image-reveal {
+            animation: imageReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: scale(1.05);
+        }
+        @keyframes imageReveal {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .silk-gradient {
+            background: linear-gradient(135deg, #0a0a0a 0%, #212121 100%);
+        }
+        /* Override all border radii to 0px per design system */
+        * { border-radius: 0px !important; }
+    </style>
+</head>
+<body class="font-body overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl bg-surface dark:bg-surface-container-low shadow-sm shadow-on-surface/5">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<div class="text-2xl font-headline font-bold tracking-tighter text-primary dark:text-primary-fixed uppercase">Artelía</div>
+<div class="hidden md:flex space-x-12">
+<a class="font-headline tracking-tighter uppercase text-label-md text-secondary dark:text-secondary-fixed border-b border-secondary hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Artists</a>
+<a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400 hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Collections</a>
+<a class="font-headline tracking-tighter uppercase text-label-md text-on-surface-variant hover:text-primary transition-colors duration-400 hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform" href="#">Journal</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-primary dark:text-primary-fixed hover:opacity-70 transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] scale-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on Mobile, Visible on Desktop as a secondary nav structure per standard layout, but design spec says top nav handles desktop. We will use it as an off-canvas or secondary structural element if needed, but the prompt asks for standard landing page. We will include it visually as a side panel for desktop structure, fulfilling the JSON requirement) -->
+<div class="hidden lg:flex flex-col h-full py-12 px-6 h-full w-80 fixed left-0 top-0 z-[60] bg-surface dark:bg-surface-container-high bg-surface-container-low dark:bg-surface-container-highest border-0 pt-32">
+<div class="mb-12">
+<h2 class="font-headline font-bold text-xl text-primary dark:text-primary-fixed">The Gallery</h2>
+<p class="font-body text-sm text-on-surface-variant uppercase tracking-widest mt-2">Curated Excellence</p>
+</div>
+<nav class="flex-grow space-y-6">
+<a class="flex items-center text-primary dark:text-primary-fixed font-bold border-l-4 border-secondary pl-4 font-body text-label-md uppercase tracking-widest hover:bg-surface-container-highest dark:hover:bg-primary-container transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] py-2" href="#">
+<span class="material-symbols-outlined mr-4">gallery_thumbnail</span>
+                Current Expositions
+            </a>
+<a class="flex items-center text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 font-body text-label-md uppercase tracking-widest hover:bg-surface-container-highest dark:hover:bg-primary-container transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] py-2 pl-4" href="#">
+<span class="material-symbols-outlined mr-4">auto_stories</span>
+                Digital Archives
+            </a>
+<a class="flex items-center text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 font-body text-label-md uppercase tracking-widest hover:bg-surface-container-highest dark:hover:bg-primary-container transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] py-2 pl-4" href="#">
+<span class="material-symbols-outlined mr-4">edit_note</span>
+                Curatorial Notes
+            </a>
+<a class="flex items-center text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 font-body text-label-md uppercase tracking-widest hover:bg-surface-container-highest dark:hover:bg-primary-container transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] py-2 pl-4" href="#">
+<span class="material-symbols-outlined mr-4">sensor_door</span>
+                Artist Residencies
+            </a>
+<a class="flex items-center text-on-surface-variant hover:text-primary hover:pl-6 transition-all duration-400 font-body text-label-md uppercase tracking-widest hover:bg-surface-container-highest dark:hover:bg-primary-container transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] py-2 pl-4" href="#">
+<span class="material-symbols-outlined mr-4">lock</span>
+                Private Viewing
+            </a>
+</nav>
+<div class="mt-auto pt-12 space-y-4 border-t-0">
+<button class="w-full bg-primary text-on-primary font-body uppercase tracking-widest text-sm py-4 hover:opacity-80 transition-opacity">
+                Request Catalog
+            </button>
+<div class="flex justify-between pt-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">settings</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">help</span></a>
+</div>
+</div>
+</div>
+<!-- Main Content Area (offset for side nav on desktop) -->
+<main class="lg:ml-80 pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 lg:px-24 bg-surface py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+<div class="lg:col-span-7 z-10">
+<h1 class="font-display text-display-lg text-primary mb-8 max-w-3xl">La estética de lo efímero.</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-xl mb-12 border-l-2 border-secondary pl-6">
+                        Discover a curated selection of emerging digital and physical artworks. A space where ephemeral concepts become permanent collections.
+                    </p>
+<div class="flex items-center space-x-8">
+<button class="bg-primary text-on-primary px-10 py-5 font-body uppercase text-sm tracking-widest hover:bg-primary-container transition-colors duration-400">
+                            Explore Exhibition
+                        </button>
+<a class="text-primary font-body uppercase text-sm tracking-widest border-b-2 border-primary hover:border-secondary hover:text-secondary transition-colors duration-400 pb-1" href="#">
+                            View Catalog
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[600px] w-full">
+<!-- Asymmetric overlapping images -->
+<div class="absolute right-0 top-0 w-4/5 h-4/5 bg-surface-container-low overflow-hidden shadow-[0_20px_40px_rgba(28,27,27,0.06)] z-10">
+<img alt="Featured Art 1" class="w-full h-full object-cover gallery-image-reveal" data-alt="A striking, high-contrast fine art photograph of a delicate, ephemeral structure made of wire and torn paper, illuminated by a harsh, dramatic spotlight in a stark white gallery space. The mood is minimalist, tense, and deeply atmospheric, utilizing a pristine white and absolute black palette with a single thread of crimson." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW-WayeNaAzwNGwZSOqoLdh5rs9_glyNt2zZ0AnOK0DiJ7tSNxJn6bSOmMeD0CCDlk3XqF5E8NqojSN0D4PtfO-Fb4h2GQl0MuvJ-XZeSnp3IfzcMcd2wjm5jGhnSmDd81HPhTQk8zL81DHBoSdf32cTG9VOzXwB3QT5BEcIsaO2x8WBBVXiWW8ofr3X7VOTTWzno7Ny8Lh-VgKO3gbD8iQ08ocPnrAagPT8I9dEwfxlII91EZyH3kSg"/>
+</div>
+<div class="absolute left-0 bottom-0 w-3/5 h-3/5 bg-surface-container overflow-hidden z-20">
+<img alt="Featured Art 2" class="w-full h-full object-cover gallery-image-reveal" data-alt="A macro detail shot of a textured, impasto oil painting in muted terracotta and sage green tones. The thick brushstrokes catch soft, ambient light in a serene, modern gallery setting. The aesthetic is high-end editorial, focusing on the tactile nature of the physical artwork against a neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqquhG6MI8imeV3uyaeiO7tvVs1CeQuC7LqJ0uFBy3zPBM700QXMYdKWUiLXnapUX1HfXA2RX1nxZ_YKsqGlqUECSnB76nNELmXbEfEBDWOJEVpGJQ7miqFwcOJfE1RD25XmyzY16iaDVgYup0DMiQWrrMl0rUEi606WnOtVLMISW2XeWqH2WE9DPTCxTRqbH6WbHvk0983wu3FOY0ESYjvikA96-V6Gvmuhwglz9XpD37fnTw2g6ikA" style="animation-delay: 0.2s;"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Artwork Grid (Bento Style) -->
+<section class="px-8 lg:px-24 py-32 bg-surface-container-low">
+<div class="mb-20 flex justify-between items-end">
+<div>
+<span class="font-body uppercase text-label-md tracking-widest text-secondary mb-4 block">Curated Selection</span>
+<h2 class="font-headline text-display-md text-primary">Permanent Archives</h2>
+</div>
+<a class="hidden md:flex text-primary font-body uppercase text-sm tracking-widest border-b border-primary hover:border-secondary hover:text-secondary transition-colors duration-400 pb-1 items-center" href="#">
+                    All Works <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Item -->
+<div class="md:col-span-2 row-span-2 group relative h-[600px] bg-surface-container-lowest p-2 overflow-hidden">
+<div class="absolute top-6 left-6 z-10 bg-surface-container-high px-4 py-2 font-body text-label-sm uppercase text-on-surface">Abstract</div>
+<img alt="Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)]" data-alt="A large-scale contemporary abstract expressionist painting featuring bold, sweeping strokes of deep ink black and muted terracotta against a warm canvas-white background. The artwork is displayed in a brightly lit, high-end digital gallery setting, emphasizing texture and raw emotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnluOpGGA4pl6ot_ftY8knLQGePPUFxZ1Va3C2entbPdJJ8uk3juedISA_c4BKPVLsSn-8d8Fbj0syN8iMKqSjvqjqzwnBIANxOeqrm0zS1zRALzprGUhKmKNoYeoexlzzCuDeCff0e7cCZZIKWds7F4KerTAOFnH1l1HLbCs8zAH45hJ9CW3o3s0eKSGDgw2pUhqtc6lAaDMnpukxGXMRuO59ftlt9OnenU5WQVTvAzMZWdjQOOZDDQ"/>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent">
+<h3 class="font-headline text-2xl text-surface">Echoes of Silence</h3>
+<p class="font-body text-surface-variant mt-2 uppercase tracking-widest text-xs">Elena Rostova • Oil on Canvas</p>
+</div>
+</div>
+<!-- Small Item 1 -->
+<div class="group relative h-[284px] bg-surface-container-lowest p-2 overflow-hidden">
+<img alt="Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)]" data-alt="A sleek, minimalist sculpture made of brushed steel and frosted glass, sitting on a stark white pedestal in a brightly lit, contemporary art gallery. The lighting casts sharp, geometric shadows, enhancing the modern, high-end editorial aesthetic of the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkIouDlGeAenIFpzZrKxIxDD5TBI4YWCO0p7YPvqFj5C8Ev_CyUgPes1gTkhK7QcJZ1nowEkxMlfxlRffHGoSU1RM8pGEtmY8aBL9xGK6spgpiZdud4YTW6en8Ul4iPupJle2KfTbV8qJiL1NW4Ijwy0WnwdjmFr-ujzQNtaqAetKZohR5iqoRUo1VsvJWy1OA0bMiL1FFaW9oayfk2tJddizkjircxqhNkSaM-9XnfltVSJ-vKWw6ig"/>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
+<h3 class="font-headline text-xl text-surface">Structural Form I</h3>
+<p class="font-body text-surface-variant mt-1 uppercase tracking-widest text-xs">David Chen</p>
+</div>
+</div>
+<!-- Small Item 2 -->
+<div class="group relative h-[284px] bg-surface-container-lowest p-2 overflow-hidden">
+<img alt="Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)]" data-alt="A stunning piece of digital generative art displayed on a high-resolution screen in a white-walled gallery. The art features fluid, organic shapes in muted sage green and deep charcoal, creating a sense of calm and technical sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7jdSZqd7w_QvNsC6pmZsoe2sz01prUqakC4Yg_E9SaqywGUDC1f7ffQ3ApASac4gYU2yKCR9yfvsJ15LQhF6hubG2rh1bsDYCUC7T6Mn55sgxcODiIoLOFUj5OBywB_p3PwTrYdaaHZQYu7x93c4w_UQQmrPUF6ouHghqrua9XWjWci2NVLOctYFwrk62oj0xjlI2-E3Jn4lrrEfz8IUH8bmOCoBmGWUmM1bfH95p-1ECqpKAIaGgQ"/>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
+<h3 class="font-headline text-xl text-surface">Algorithmic Flora</h3>
+<p class="font-body text-surface-variant mt-1 uppercase tracking-widest text-xs">Studio Null</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial 'How it works' Section -->
+<section class="px-8 lg:px-24 py-32 bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+<div class="sticky top-32">
+<h2 class="font-headline text-display-md text-primary mb-8">The Collection Process.</h2>
+<p class="font-body text-lg text-on-surface-variant mb-12">
+                         Acquiring art should be as intentional as creating it. Our process ensures authenticity, provenance, and a direct connection between the collector and the creator.
+                     </p>
+<button class="bg-secondary text-on-secondary px-8 py-4 font-body uppercase text-sm tracking-widest hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-400">
+                         Inquire Now
+                     </button>
+</div>
+<div class="space-y-20">
+<!-- Step 1 -->
+<div class="relative pl-12 border-l border-surface-variant/30">
+<span class="absolute -left-5 top-0 font-headline text-4xl text-surface-variant">01</span>
+<h3 class="font-headline text-2xl text-primary mb-4">Curation</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                             Every piece is meticulously selected by our internal board of curators, ensuring a coherent narrative that aligns with our vision of high-end, ephemeral aesthetics.
+                         </p>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-12 border-l border-surface-variant/30">
+<span class="absolute -left-5 top-0 font-headline text-4xl text-surface-variant">02</span>
+<h3 class="font-headline text-2xl text-primary mb-4">Authentication</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                             Physical works receive a cryptographic certificate of authenticity, bridging the tactile nature of traditional art with the security of the digital gallery ecosystem.
+                         </p>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-12 border-l border-surface-variant/30">
+<span class="absolute -left-5 top-0 font-headline text-4xl text-surface-variant">03</span>
+<h3 class="font-headline text-2xl text-primary mb-4">Acquisition</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                             A seamless, private transaction process handled with white-glove service, ensuring your new acquisition is transported and installed with museum-grade care.
+                         </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full relative mt-24 bg-primary dark:bg-tertiary-container bg-primary dark:bg-tertiary-container flat no shadows grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full">
+<div>
+<div class="font-headline text-3xl italic text-secondary-fixed mb-6">Artelía</div>
+<p class="font-body text-sm tracking-normal text-on-primary dark:text-primary-fixed-dim">
+                    © 2024 Artelía Digital Gallery. All rights reserved.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Newsletter Signup</a>
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-body text-sm tracking-normal text-on-primary-container hover:text-on-primary transition-colors hover:text-secondary-fixed transition-colors duration-400 opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple script to trigger animations when elements come into view
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.gallery-image-reveal').forEach(img => {
+                img.style.animationPlayState = 'paused';
+                observer.observe(img);
+            });
+        });
+    </script>
+</body></html>
