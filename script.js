@@ -442,6 +442,17 @@ document.addEventListener('click', (event) => {
 const savedLang = localStorage.getItem('artelia-lang') || 'es';
 applyTranslations(savedLang);
 
+// If a fragment is present (e.g., linking from desarrollo-art to index.html#revista), scroll smoothly to it
+if (window.location.hash) {
+  const targetEl = document.querySelector(window.location.hash);
+  if (targetEl) {
+    // slight delay to allow layout/observers to initialize
+    setTimeout(() => {
+      targetEl.scrollIntoView({ behavior: 'smooth' });
+    }, 80);
+  }
+}
+
 // Back to top button behavior
 const backBtn = document.getElementById('backToTop');
 if (backBtn) {
