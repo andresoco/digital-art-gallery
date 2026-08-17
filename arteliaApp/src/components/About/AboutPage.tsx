@@ -1,11 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const AboutPage: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }))
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (formData.name && formData.email && formData.message) {
+      console.log('Form submitted:', formData)
+      setSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setSubmitted(false), 3000)
+    }
+  }
+
   return (
-    <main className="pt-32 pb-24 min-h-screen">
+    <main className="pt-32 pb-24 min-h-screen bg-surface">
       {/* The Curator's Vision */}
       <section className="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-32">
         <div className="lg:col-span-5 flex flex-col justify-center">
+          <span className="font-body text-sm uppercase tracking-widest text-secondary mb-4 block">
+            Our Story
+          </span>
           <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-8">
             The Curator's Vision
           </h1>
@@ -26,14 +54,14 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="lg:col-span-7 relative">
-          <div className="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+          <div className="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden shadow-lg">
             <img 
               className="w-full h-full object-cover grayscale opacity-90 transition-transform duration-[10s] hover:scale-105" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2PUk95vyNhBaUFonB90VEHX3f_oiZvA-l5A5Dcl6Of_JDqnCy9JHOvlptGQM4pN1aEolRuA2o_TNeGhU-pxW36waE51842U8U2n_vgg-OVFwo-dMyYhQ7xrRuGs8y1okd4g4tU3_GbROcdiT-jgmmWQrvmCOFJ6uXhi3iZxaGo1YBSAljuALnRcohw9wGOMlLOwrvJXoPJeDlZ4OaIpudMVqYMMvREDD4hCaTHUR06Zi9Ax-fTR_4uw"
               alt="Gallery curator"
             />
           </div>
-          <div className="absolute -bottom-16 -left-16 w-1/2 aspect-square bg-surface-container border border-surface-container-low z-10 hidden md:block">
+          <div className="absolute -bottom-16 -left-16 w-1/2 aspect-square bg-surface-container border border-surface-container-low z-10 hidden md:block shadow-lg">
             <img 
               className="w-full h-full object-cover" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0I14zefaTJJw_ViYoMyPqTCeiBPZ_VhyQBJG3cf1OHgZceXY3py2cMdPHSLShnd3uzO-deCAGzbJIx1eUZcWOQv39ERssMQ9Busy8mEeP9cU8nmyksWcVkanoUsE0j3h-5iAhQD1MUK1-VKts5Yv_t6QMdM8ZlYsTf8zt8-ANNpc_hDZeXtYZFlNsYc5d-4FSmHw8gfz3ryoEB41kfGGoy3B8FKB37DSlgGtGocP22yqRJB7fwRq_Qw"
@@ -52,44 +80,58 @@ export const AboutPage: React.FC = () => {
             <p className="font-body text-on-surface-variant mb-12">
               For private viewings, acquisitions, or artist representation requests.
             </p>
-            <form className="space-y-10">
+            {submitted && (
+              <div className="mb-8 p-4 bg-secondary text-on-secondary rounded">
+                <p className="font-body text-sm">✓ Thank you! Your inquiry has been received. We'll respond within 48 hours.</p>
+              </div>
+            )}
+            <form onSubmit={handleSubmit} className="space-y-10">
               <div className="relative floating-input">
                 <input 
-                  className="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 peer placeholder-transparent" 
+                  className="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 focus:border-secondary peer placeholder-transparent outline-none" 
                   id="name" 
                   placeholder="Name" 
                   required 
                   type="text"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
-                <label className="absolute left-0 top-2 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none" htmlFor="name">
+                <label className="absolute left-0 top-2 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:top-6 peer-focus:text-secondary peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-6 peer-[:not(:placeholder-shown)]:text-secondary peer-[:not(:placeholder-shown)]:text-xs" htmlFor="name">
                   Full Name
                 </label>
               </div>
               <div className="relative floating-input">
                 <input 
-                  className="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 peer placeholder-transparent" 
+                  className="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 focus:border-secondary peer placeholder-transparent outline-none" 
                   id="email" 
                   placeholder="Email" 
                   required 
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
-                <label className="absolute left-0 top-2 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none" htmlFor="email">
+                <label className="absolute left-0 top-2 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:top-6 peer-focus:text-secondary peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-6 peer-[:not(:placeholder-shown)]:text-secondary peer-[:not(:placeholder-shown)]:text-xs" htmlFor="email">
                   Email Address
                 </label>
               </div>
               <div className="relative floating-input pt-4">
                 <textarea 
-                  className="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 peer placeholder-transparent resize-none" 
+                  className="w-full bg-transparent border-0 border-b border-outline text-primary font-body py-2 px-0 focus:ring-0 focus:border-secondary peer placeholder-transparent resize-none outline-none" 
                   id="message" 
                   placeholder="Message" 
                   required 
                   rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
                 />
-                <label className="absolute left-0 top-6 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none" htmlFor="message">
+                <label className="absolute left-0 top-6 text-on-surface-variant font-body text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:top-10 peer-focus:text-secondary peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-10 peer-[:not(:placeholder-shown)]:text-secondary peer-[:not(:placeholder-shown)]:text-xs" htmlFor="message">
                   Your Message
                 </label>
               </div>
-              <button className="bg-primary text-on-primary px-8 py-4 font-body text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-400" type="submit">
+              <button 
+                className="bg-primary text-on-primary px-8 py-4 font-body text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-400 active:scale-95 w-full" 
+                type="submit"
+              >
                 Submit Inquiry
               </button>
             </form>
