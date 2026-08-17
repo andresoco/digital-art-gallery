@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artelía — Galería Digital</title>
+    <meta
+      name="description"
+      content="Landing page de una galería digital con artistas contemporáneos, curaduría y piezas destacadas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="drawer-overlay" aria-hidden="true"></div>
+
+    <aside class="side-drawer" aria-label="Menú lateral">
+      <div class="drawer-top">
+        <span class="drawer-brand">Artelía</span>
+        <button class="close-button" aria-label="Cerrar menú">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <nav class="drawer-nav" aria-label="Navegación principal">
+        <a class="drawer-link nav-link" href="#coleccion">Colección</a>
+        <a class="drawer-link nav-link" href="#artistas">Artistas</a>
+        <a class="drawer-link nav-link" href="#proceso">Manifiesto</a>
+        <a class="drawer-link nav-link" href="#cta">Subir Obra</a>
+      </nav>
+
+      <div class="drawer-foot">
+        <span class="label">Redes</span>
+        <div class="socials">
+          <a href="#">IG</a>
+          <a href="#">TW</a>
+          <a href="#">FB</a>
+        </div>
+      </div>
+    </aside>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="nav-actions">
+          <button class="menu-button" type="button" aria-label="Abrir menú">
+            <span class="material-symbols-outlined">menu</span>
+            <span data-i18n="menu">Menú</span>
+          </button>
+        </div>
+
+        <div class="brand">Artelía</div>
+
+        <div class="header-tools">
+          <div class="lang-menu" aria-label="Selector de idioma">
+            <button class="lang-button" type="button" aria-expanded="false">
+              <span class="lang-label">ES</span>
+              <span class="material-symbols-outlined">language</span>
+            </button>
+            <div class="lang-dropdown" role="menu" aria-label="Idiomas disponibles">
+              <button class="lang-option active" type="button" data-lang="es">Español</button>
+              <button class="lang-option" type="button" data-lang="en">English</button>
+              <button class="lang-option" type="button" data-lang="fr">Français</button>
+              <button class="lang-option" type="button" data-lang="de">Deutsch</button>
+              <button class="lang-option" type="button" data-lang="pt">Português</button>
+              <button class="lang-option" type="button" data-lang="it">Italiano</button>
+              <button class="lang-option" type="button" data-lang="ja">日本語</button>
+              <button class="lang-option" type="button" data-lang="ar">العربية</button>
+            </div>
+          </div>
+
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+            <span class="material-symbols-outlined">dark_mode</span>
+          </button>
+        </div>
+
+        <a class="mini-link" href="#cta" data-i18n="revista">Revista</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-media">
+          <img
+            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80"
+            alt="Estudio de arte contemporáneo"
+          />
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content reveal">
+          <p class="hero-kicker" data-i18n="hero.kicker">Edición primavera 2026</p>
+          <h1 data-i18n="hero.title">La estética de lo efímero</h1>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#coleccion" data-i18n="hero.buttonPrimary">Ver exposición</a>
+            <a class="btn btn-secondary" href="#artistas" data-i18n="hero.buttonSecondary">Sumergirse</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-section" id="coleccion">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag" data-i18n="collection.tag">01 / Curaduría</span>
+            <h2 class="section-title" data-i18n="collection.title">Piezas maestras</h2>
+          </div>
+
+          <div class="collection-grid reveal" style="margin-top: 3rem;">
+            <article class="feature-card flip-card">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <div class="image-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=80"
+                      alt="Pintura abstracta contemporánea"
+                    />
+                    <div class="frame"></div>
+                  </div>
+                </div>
+                <div class="flip-face flip-back">
+                  <div class="back-content">
+                    <span class="flip-tag">Detalle</span>
+                    <h3>Ecos del vacío</h3>
+                    <p>Una obra donde el color se abre como memoria y el vacío se convierte en un paisaje emocional, silencioso y profundo.</p>
+                    <button type="button" class="mini-flip-btn">Voltear</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div class="small-stack">
+              <article class="small-card flip-card">
+                <div class="flip-inner">
+                  <div class="flip-face flip-front">
+                    <div class="image-wrap">
+                      <img
+                        src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80"
+                        alt="Escultura detalle"
+                      />
+                    </div>
+                  </div>
+                  <div class="flip-face flip-back">
+                    <div class="back-content small-back">
+                      <span class="flip-tag">Detalle</span>
+                      <h3>Fragmentos IV</h3>
+                      <p>Una pieza mineral que recoge la tensión entre la memoria y la forma, con cortes complejos y materiales intensos.</p>
+                      <button type="button" class="mini-flip-btn">Voltear</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="small-card flip-card">
+                <div class="flip-inner">
+                  <div class="flip-face flip-front">
+                    <div class="image-wrap">
+                      <img
+                        src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80"
+                        alt="Arte digital"
+                      />
+                    </div>
+                  </div>
+                  <div class="flip-face flip-back">
+                    <div class="back-content small-back">
+                      <span class="flip-tag">Detalle</span>
+                      <h3>Luz líquida</h3>
+                      <p>Un estudio de luz y reflejo, donde la imagen parece tocar el agua y la tecnología se vuelve materia emocional.</p>
+                      <button type="button" class="mini-flip-btn">Voltear</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="artists-wrap" id="artistas">
+        <div class="container">
+          <div class="artists-header reveal">
+            <span class="section-tag" data-i18n="artists.tag">Nuestra comunidad</span>
+            <h2 class="section-title" data-i18n="artists.title">Protagonistas</h2>
+          </div>
+
+          <div class="artist-controls reveal">
+            <button class="artist-nav prev" type="button" aria-label="Anterior artista">&#8592;</button>
+            <button class="artist-nav next" type="button" aria-label="Siguiente artista">&#8594;</button>
+          </div>
+
+          <div class="artist-track reveal" id="artistTrack">
+            <article class="artist-card">
+              <div class="image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+                  alt="Julián Ferré"
+                />
+              </div>
+              <h3>Julián Ferré</h3>
+              <p>Pintura neoclásica</p>
+            </article>
+
+            <article class="artist-card">
+              <div class="image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+                  alt="Sofía Luna"
+                />
+              </div>
+              <h3>Sofía Luna</h3>
+              <p>Arte conceptual digital</p>
+            </article>
+
+            <article class="artist-card">
+              <div class="image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+                  alt="Tomás Aráoz"
+                />
+              </div>
+              <h3>Tomás Aráoz</h3>
+              <p>Escultura orgánica</p>
+            </article>
+
+            <article class="artist-card">
+              <div class="image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80"
+                  alt="Alicia Morel"
+                />
+              </div>
+              <h3>Alicia Morel</h3>
+              <p>Light installations</p>
+            </article>
+
+            <article class="artist-card">
+              <div class="image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
+                  alt="Nora Vega"
+                />
+              </div>
+              <h3>Nora Vega</h3>
+              <p>Texturas mínimas</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-section" id="proceso">
+        <div class="container">
+          <div class="manifesto-layout reveal">
+            <div class="process-photo">
+              <img
+                src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1000&q=80"
+                alt="Libro de arte y editorial"
+              />
+            </div>
+
+            <div>
+              <span class="section-tag" data-i18n="process.tag">02 / El proceso</span>
+              <h2 class="section-title" data-i18n="process.title">Cómo ser parte de la élite digital</h2>
+
+              <div class="process-list" style="margin-top: 2.5rem;">
+                <article class="process-item">
+                  <span class="process-number">I</span>
+                  <div>
+                    <h3>Curaduría inicial</h3>
+                    <p>Presenta tu portafolio para una evaluación rigurosa de técnica, visión y coherencia narrativa.</p>
+                  </div>
+                </article>
+
+                <article class="process-item">
+                  <span class="process-number">II</span>
+                  <div>
+                    <h3>Digitalización premium</h3>
+                    <p>Capturamos cada obra en alta resolución para dar vida a una experiencia inmersiva y detallada.</p>
+                  </div>
+                </article>
+
+                <article class="process-item">
+                  <span class="process-number">III</span>
+                  <div>
+                    <h3>Difusión global</h3>
+                    <p>Te conectamos con coleccionistas, curadores y galerías que valoran el trabajo artístico auténtico.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-block">
+        <div class="container quote-grid reveal">
+          <div>
+            <span class="section-tag" style="color: #f4c7b7;">Crítica artística</span>
+            <h2>“Artelía redefinió el concepto de galería en el siglo XXI.”</h2>
+          </div>
+
+          <div class="testimonial-stack">
+            <article class="testimonial">
+              <p>“La sutileza de su diseño permite que las obras respiren; no es solo una plataforma, es un lienzo en sí mismo.”</p>
+              <div class="author">
+                <div class="author-badge">M</div>
+                <div>
+                  <strong>Marta Jiménez</strong>
+                  <small>Crítica de arte</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p>“Como coleccionista, busco experiencias que igualen la calidad física de una galería. Artelía supera esas expectativas.”</p>
+              <div class="author">
+                <div class="author-badge" style="border:1px solid rgba(244,199,183,0.8);">R</div>
+                <div>
+                  <strong>Ricardo Estévez</strong>
+                  <small>Coleccionista</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="cta">
+        <div class="container">
+          <h2 data-i18n="cta.title">Escribe tu propio capítulo en la historia.</h2>
+          <a class="btn btn-primary" href="#inicio" data-i18n="cta.button">Comenzar legado</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">Artelía</p>
+            <p>
+              Dedicados a la preservación y promoción de la excelencia artística en el reino digital.
+              Cada píxel es un tributo a la creatividad humana.
+            </p>
+          </div>
+
+          <div>
+            <h4 data-i18n="footer.explore">Explorar</h4>
+            <ul>
+              <li><a href="#coleccion">Galería virtual</a></li>
+              <li><a href="#artistas">Artistas residentes</a></li>
+              <li><a href="#proceso">Archivo histórico</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 data-i18n="footer.follow">Seguir</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Art Letter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2024 Artelía-Andrea Santur </span>
+          <div>
+            <span>Legal</span>
+            <span style="margin-left: 1.5rem;">Privacidad</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
